@@ -17,17 +17,13 @@ include makerc/colors.mk
 NAME			:= megaphone
 UNIT_OUT		:= test.out
 BUILD_DIR		:= build
-#MAIN			:= main.c
-#INCLUDE_DIR		:= include
 RM				:= rm -rvf
 
-#HEADERS			= $(INCLUDE_DIR)/philo.h
 CC				= c++
 
 ################################################################################
 
 CFLAGS			= -Wall -Wextra -Werror -Wpedantic -std=c++98
-#INCLUDE_FLAGS	:= $(addprefix -I, $(sort $(dir $(HEADERS))))
 CRIT_FLAG		= -lcriterion
 
 ifdef	DEBUG
@@ -42,7 +38,7 @@ endif
 
 # Source files
 SRC = \
-  SRC/megaphone.cpp
+	SRC/main.cpp
 
 TEST_SRC =
 
@@ -51,9 +47,8 @@ UNIT_SRC =
 ################################################################################
 
 # Object files
-OBJS		= $(SRC:%.c=%.o)
-#OBJS       = $(addprefix $(BUILD_DIR)/, $(SRC:%.c=%.o))
-#MAIN_OBJ   = $(addprefix $(BUILD_DIR)/, $(MAIN:%.c=%.o))
+#OBJS		= $(SRC:%.cpp=%.o)
+OBJS       = $(addprefix $(BUILD_DIR)/, $(SRC:%.cpp=%.o))
 
 ################################################################################
 
@@ -76,7 +71,7 @@ $(NAME): $(OBJS) $(MAIN_OBJ)
 	$(CC) $(CFLAGS) $^ $(INCLUDE_FLAGS) -o $(NAME)
 	@printf "$(BLUE_FG)$(NAME)$(RESET_COLOR) created\n"
 
-$(MAIN_OBJ) $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(HEADER)
+$(OBJS): $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -c $< -o $@
 
