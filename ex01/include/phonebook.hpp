@@ -4,14 +4,27 @@
 #include <string>
 #include <iostream>
 
-class Phonebook {
+class Contact {
 	private:
-		std::string		name;
-		std::uint32_t	age;
+		std::string		first_name;
+		std::string		last_name;
+		std::string		nick_name;
+		std::uint64_t	phone_number;
+		std::string		darkest_secret;
 
 	public:
-		Phonebook(const std::string& n, std::uint32_t a);
+		Contact(const std::string& f, const std::string& l, const std::string& n,
+				std::uint32_t p, std::string d);
 		void sayHello();
 };
+
+//class Phonebook {
+//	private:
+//		Contact	list[8];
+//
+//	public:
+//
+//
+//};
 
 #endif
