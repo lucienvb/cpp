@@ -47,7 +47,6 @@ UNIT_SRC =
 ################################################################################
 
 # Object files
-#OBJS		= $(SRC:%.cpp=%.o)
 OBJS       = $(addprefix $(BUILD_DIR)/, $(SRC:%.cpp=%.o))
 
 ################################################################################
@@ -62,12 +61,10 @@ LIB_UNIT = -L/Users/lucienvanbussel/.brew/cellar/criterion/2.4.1_2/lib
 
 all: $(NAME)
 
-$(NAME): SHELL :=/bin/bash
-
 unit_test: $(UNIT_OUT) all
 .PHONY: unit_test
 
-$(NAME): $(OBJS) $(MAIN_OBJ)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $^ $(INCLUDE_FLAGS) -o $(NAME)
 	@printf "$(BLUE_FG)$(NAME)$(RESET_COLOR) created\n"
 
