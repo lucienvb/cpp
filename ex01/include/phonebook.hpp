@@ -16,12 +16,6 @@ class Contact {
 			darkestSecret = "";
 		}
 
-		void	sayHello() {
-			std::cout << "Hello, my name is " << firstName << " " << lastName << ", some people call me "
-					  << nickName << ". You can reach me on: " << phoneNumber << ". My darkest secret is: "
-					  << darkestSecret << "." << std::endl;
-		};
-
 		std::string	getFirstName() const {
 			return (firstName);
 		}
@@ -96,16 +90,35 @@ class Phonebook {
 			list[i++] = newContact;
 		}
 
+		std::string make_max_ten_characters(std::string in)
+		{
+			std::string out;
+			for (uint32_t i = 0; i < 10; i++)
+			{
+				if (std::isalnum(in[i]) && i < 9)
+					out += in[i];
+				else if (i < 9)
+					out += ' ';
+				else if (std::isalnum(in[i]))
+					out += '.';
+				else
+					out += ' ';
+			}
+			return (out);
+		}
+
 		void	printContact() {
 			std::string line;
 			uint32_t	index;
 
 			for (uint32_t j = 0; j < LIST_SIZE; j++)
 			{
-				std::cout << "\n" << j << "\t|\t" << list[j].getFirstName() << "\t|\t" <<
-				list[j].getLastName() << "\t|\t" << list[j].getNickName() << "\n\n";
+				std::cout << "\n" << make_max_ten_characters(std::to_string(j)) << "|"
+				<< make_max_ten_characters(list[j].getFirstName()) << "|" <<
+				make_max_ten_characters(list[j].getLastName()) << "|" <<
+				make_max_ten_characters(list[j].getNickName());
 			}
-			std::cout << "Index of choice: ";
+			std::cout << "\n\nIndex of choice: ";
 			std::getline(std::cin, line);
 			index = std::stoi(line);
 			std::cout << "\n-- Contact " << index << " --" << std::endl;
