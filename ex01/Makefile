@@ -41,7 +41,9 @@ endif
 
 # Source files
 SRC = \
-  SRC/main.cpp
+  SRC/main.cpp \
+  SRC/make_max_ten_characters.cpp \
+  SRC/get_line.cpp
 
 TEST_SRC =
 

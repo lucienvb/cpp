@@ -6,6 +6,10 @@
 
 # define LIST_SIZE 8
 
+// FUNCTIONS
+std::string make_max_ten_characters(std::string in);
+std::string	get_line(std::string type);
+
 class Contact {
 	public:
 		Contact() {
@@ -32,20 +36,22 @@ class Contact {
 			return (darkestSecret);
 		}
 
-		void	setFirstName(const std::string& fName) {
-			firstName = fName;
+		void	setFirstName() {
+			firstName = get_line("First name: ");
 		}
-		void	setLastName(const std::string& lName) {
-			lastName = lName;
+
+		void	setLastName() {
+			lastName = get_line("Last name: ");
 		}
-		void	setNickName(const std::string& nName) {
-			nickName = nName;
+
+		void	setNickName() {
+			nickName = get_line("Nickname: ");
 		}
-		void	setPhoneNumber(const std::string& phone) {
-			phoneNumber = phone;
+		void	setPhoneNumber() {
+			phoneNumber = get_line("Phone number: ");
 		}
-		void	setDarkestSecret(const std::string& secret) {
-			darkestSecret = secret;
+		void	setDarkestSecret() {
+			darkestSecret = get_line("Darkest secret: ");
 		}
 
 	private:
@@ -56,6 +62,7 @@ class Contact {
 		std::string		darkestSecret;
 };
 
+// FIX CTRL-D !
 class Phonebook {
 	public:
 		Phonebook () {
@@ -67,44 +74,13 @@ class Phonebook {
 			Contact newContact;
 			std::string line;
 
-			std::cout << "First name: ";
-			std::getline(std::cin, line);
-			newContact.setFirstName(line);
-
-			std::cout << "Last name: ";
-			std::getline(std::cin, line);
-			newContact.setLastName(line);
-
-			std::cout << "Nick name: ";
-			std::getline(std::cin, line);
-			newContact.setNickName(line);
-
-			std::cout << "Phone number: ";
-			std::getline(std::cin, line);
-			newContact.setPhoneNumber(line);
-
-			std::cout << "Darkest secret: ";
-			std::getline(std::cin, line);
-			newContact.setDarkestSecret(line);
+			newContact.setFirstName();
+			newContact.setLastName();
+			newContact.setNickName();
+			newContact.setPhoneNumber();
+			newContact.setDarkestSecret();
 
 			list[i++] = newContact;
-		}
-
-		std::string make_max_ten_characters(std::string in)
-		{
-			std::string out;
-			for (uint32_t i = 0; i < 10; i++)
-			{
-				if (std::isalnum(in[i]) && i < 9)
-					out += in[i];
-				else if (i < 9)
-					out += ' ';
-				else if (std::isalnum(in[i]))
-					out += '.';
-				else
-					out += ' ';
-			}
-			return (out);
 		}
 
 		void	printContact() {
@@ -124,7 +100,7 @@ class Phonebook {
 			std::cout << "\n-- Contact " << index << " --" << std::endl;
 			std::cout << "First name: " << list[index].getFirstName() << std::endl;
 			std::cout << "Last name: " << list[index].getLastName() << std::endl;
-			std::cout << "Nick name: " << list[index].getNickName() << std::endl;
+			std::cout << "Nickname: " << list[index].getNickName() << std::endl;
 			std::cout << "Phone number: " << list[index].getPhoneNumber() << std::endl;
 			std::cout << "Darkest secret: " << list[index].getDarkestSecret() << std::endl << std::endl;
 		}
