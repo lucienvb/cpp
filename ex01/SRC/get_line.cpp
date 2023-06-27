@@ -1,7 +1,7 @@
 #include <phonebook.hpp>
 
-// NOT WORKING
 // CTRL-D
+// maybe check also on only whitespaces
 std::string	get_line(std::string type)
 {
 	std::string line;

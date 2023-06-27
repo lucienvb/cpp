@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <cstring>
 
 # define LIST_SIZE 8
 
@@ -63,6 +64,7 @@ class Contact {
 };
 
 // FIX CTRL-D !
+// new isn't allowed --> dynamically allocation!
 class Phonebook {
 	public:
 		Phonebook () {
@@ -80,6 +82,8 @@ class Phonebook {
 			newContact.setPhoneNumber();
 			newContact.setDarkestSecret();
 
+			if (i == LIST_SIZE)
+				i = 0;
 			list[i++] = newContact;
 		}
 
@@ -94,9 +98,16 @@ class Phonebook {
 				make_max_ten_characters(list[j].getLastName()) << "|" <<
 				make_max_ten_characters(list[j].getNickName());
 			}
-			std::cout << "\n\nIndex of choice: ";
-			std::getline(std::cin, line);
-			index = std::stoi(line);
+			while (1)
+			{
+				std::cout << "\n\nIndex of choice: ";
+				std::getline(std::cin, line);
+				index = std::stoi(line);
+				if (index < 0 || index > 7)
+					std::cout << "Invalid index. ";
+				else
+					break ;
+			}
 			std::cout << "\n-- Contact " << index << " --" << std::endl;
 			std::cout << "First name: " << list[index].getFirstName() << std::endl;
 			std::cout << "Last name: " << list[index].getLastName() << std::endl;
@@ -104,10 +115,6 @@ class Phonebook {
 			std::cout << "Phone number: " << list[index].getPhoneNumber() << std::endl;
 			std::cout << "Darkest secret: " << list[index].getDarkestSecret() << std::endl << std::endl;
 		}
-
-//		void	sayName() {
-//			std::cout << "The first name of the first contact is: " << newContact.firstName << std::endl;
-//		}
 
 	private:
 		Contact	*list;
