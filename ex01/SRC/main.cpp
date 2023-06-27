@@ -17,8 +17,8 @@ int	main(void)
 			pb.addContact();
 //			contact.sayHello();
 		else if (line.compare("SEARCH") == 0)
-//			pb.printContact();
-			std::cout << "SEARCH";
+			pb.printContact();
+//			std::cout << "SEARCH";
 		else if (line.compare("EXIT") == 0)
 			break ;
 		else

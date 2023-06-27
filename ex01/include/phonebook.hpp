@@ -64,9 +64,10 @@ class Contact {
 
 class Phonebook {
 	public:
-//	Phonebook () {
-//		list = new Contact[LIST_SIZE];
-//	}
+		Phonebook () {
+			list = new Contact[LIST_SIZE];
+			i = 0;
+		}
 
 		void	addContact() {
 			Contact newContact;
@@ -92,28 +93,36 @@ class Phonebook {
 			std::getline(std::cin, line);
 			newContact.setDarkestSecret(line);
 
-			std::cout << "\n-- Contact 1 --" << std::endl;
-			std::cout << "First name: " << newContact.getFirstName() << std::endl;
-			std::cout << "Last name: " << newContact.getLastName() << std::endl;
-			std::cout << "Nick name: " << newContact.getNickName() << std::endl;
-			std::cout << "Phone number: " << newContact.getPhoneNumber() << std::endl;
-			std::cout << "Darkest secret: " << newContact.getDarkestSecret() << std::endl << std::endl;
-//			list[0] = newContact;
+			list[i++] = newContact;
 		}
-//		void	printContact() {
-//			std::cout << "\n-- Contact 1 --" << std::endl;
-//			std::cout << "First name: " << list[0].getFirstName() << std::endl;
-//			std::cout << "Last name: " << newContact.getLastName() << std::endl;
-//			std::cout << "Nick name: " << newContact.getNickName() << std::endl;
-//			std::cout << "Phone number: " << newContact.getPhoneNumber() << std::endl;
-//			std::cout << "Darkest secret: " << newContact.getDarkestSecret() << std::endl << std::endl;
-//		}
+
+		void	printContact() {
+			std::string line;
+			uint32_t	index;
+
+			for (uint32_t j = 0; j < LIST_SIZE; j++)
+			{
+				std::cout << "\n" << j << "\t|\t" << list[j].getFirstName() << "\t|\t" <<
+				list[j].getLastName() << "\t|\t" << list[j].getNickName() << "\n\n";
+			}
+			std::cout << "Index of choice: ";
+			std::getline(std::cin, line);
+			index = std::stoi(line);
+			std::cout << "\n-- Contact " << index << " --" << std::endl;
+			std::cout << "First name: " << list[index].getFirstName() << std::endl;
+			std::cout << "Last name: " << list[index].getLastName() << std::endl;
+			std::cout << "Nick name: " << list[index].getNickName() << std::endl;
+			std::cout << "Phone number: " << list[index].getPhoneNumber() << std::endl;
+			std::cout << "Darkest secret: " << list[index].getDarkestSecret() << std::endl << std::endl;
+		}
 
 //		void	sayName() {
 //			std::cout << "The first name of the first contact is: " << newContact.firstName << std::endl;
 //		}
 
-
+	private:
+		Contact	*list;
+		int32_t	i;
 };
 
 #endif
