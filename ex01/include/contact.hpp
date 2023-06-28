@@ -6,6 +6,7 @@
 #include <csignal>
 
 // FUNCTIONS
+// move getters and setters and init to cpp
 std::string	get_line(std::string type);
 
 class Contact {
@@ -17,6 +18,8 @@ public:
 		phoneNumber = "";
 		darkestSecret = "";
 	}
+
+	~Contact();
 
 	std::string	getFirstName() const {
 		return (firstName);
