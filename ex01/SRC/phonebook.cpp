@@ -1,8 +1,25 @@
-#include "phonebook.hpp"
+#include <phonebook.hpp>
 
-Phonebook::Phonebook(): i(0);
+std::string make_max_ten_characters(std::string in);
+
+Phonebook::Phonebook(): i(0) {}
 
 Phonebook::~Phonebook() {}
+
+void    Phonebook::addContact() {
+    Contact newContact;
+    std::string line;
+
+    newContact.setFirstName();
+    newContact.setLastName();
+    newContact.setNickName();
+    newContact.setPhoneNumber();
+    newContact.setDarkestSecret();
+
+    if (i == LIST_SIZE)
+        i = 0;
+    list[i++] = newContact;
+}
 
 bool	Phonebook::printContact() {
 	std::string line;

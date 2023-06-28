@@ -43,7 +43,9 @@ endif
 SRC = \
   SRC/main.cpp \
   SRC/make_max_ten_characters.cpp \
-  SRC/get_line.cpp
+  SRC/get_line.cpp \
+  SRC/phonebook.cpp \
+  SRC/contact.cpp
 
 TEST_SRC =
 

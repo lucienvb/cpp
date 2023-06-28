@@ -5,55 +5,23 @@
 #include <iostream>
 #include <csignal>
 
-// FUNCTIONS
-// move getters and setters and init to cpp
-std::string	get_line(std::string type);
-
 class Contact {
 public:
-	Contact() {
-		firstName = "";
-		lastName = "";
-		nickName = "";
-		phoneNumber = "";
-		darkestSecret = "";
-	}
 
+	Contact();
 	~Contact();
 
-	std::string	getFirstName() const {
-		return (firstName);
-	}
-	std::string	getLastName() const {
-		return (lastName);
-	}
-	std::string	getNickName() const {
-		return (nickName);
-	}
-	std::string	getPhoneNumber() const {
-		return (phoneNumber);
-	}
-	std::string	getDarkestSecret() const {
-		return (darkestSecret);
-	}
+	std::string	getFirstName() const;
+	std::string	getLastName() const;
+	std::string	getNickName() const;
+	std::string	getPhoneNumber() const;
+	std::string	getDarkestSecret() const;
 
-	void	setFirstName() {
-		firstName = get_line("First name: ");
-	}
-
-	void	setLastName() {
-		lastName = get_line("Last name: ");
-	}
-
-	void	setNickName() {
-		nickName = get_line("Nickname: ");
-	}
-	void	setPhoneNumber() {
-		phoneNumber = get_line("Phone number: ");
-	}
-	void	setDarkestSecret() {
-		darkestSecret = get_line("Darkest secret: ");
-	}
+	void	setFirstName();
+	void	setLastName();
+	void	setNickName();
+	void	setPhoneNumber();
+	void	setDarkestSecret();
 
 private:
 	std::string		firstName;
