@@ -1,5 +1,4 @@
-#include <phonebook.hpp>
-#include <contact.hpp>
+#include <info.hpp>
 
 void handleSIGTSTP(int signal) {
 	(void)signal;

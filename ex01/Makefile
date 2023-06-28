@@ -20,7 +20,7 @@ BUILD_DIR		:= build
 INCLUDE_DIR		:= include
 RM				:= rm -rvf
 
-HEADERS			= $(INCLUDE_DIR)/phonebook.hpp
+HEADERS			= $(INCLUDE_DIR)/info.hpp
 CC				= c++
 
 ################################################################################

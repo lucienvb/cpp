@@ -1,6 +1,4 @@
-#include <phonebook.hpp>
-
-std::string make_max_ten_characters(std::string in);
+#include <info.hpp>
 
 Phonebook::Phonebook(): i(0) {}
 

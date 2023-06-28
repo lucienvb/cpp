@@ -1,11 +1,6 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <string>
-#include <iostream>
-#include <csignal>
-#include <contact.hpp>
-
 # define LIST_SIZE 8
 
 class Phonebook {
