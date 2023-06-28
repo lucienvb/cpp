@@ -1,4 +1,5 @@
 #include <phonebook.hpp>
+#include <contact.hpp>
 
 // This function receives a string and returns the same string
 // with up to 10 characters.

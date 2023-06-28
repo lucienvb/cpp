@@ -1,4 +1,5 @@
 #include <phonebook.hpp>
+#include <contact.hpp>
 
 std::string	get_line(std::string type)
 {

@@ -4,64 +4,12 @@
 #include <string>
 #include <iostream>
 #include <csignal>
-
-// FUNCTIONS
-std::string make_max_ten_characters(std::string in);
-std::string	get_line(std::string type);
+#include <contact.hpp>
 
 # define LIST_SIZE 8
 
-class Contact {
-	public:
-		Contact() {
-			firstName = "";
-			lastName = "";
-			nickName = "";
-			phoneNumber = "";
-			darkestSecret = "";
-		}
-
-		std::string	getFirstName() const {
-			return (firstName);
-		}
-		std::string	getLastName() const {
-			return (lastName);
-		}
-		std::string	getNickName() const {
-			return (nickName);
-		}
-		std::string	getPhoneNumber() const {
-			return (phoneNumber);
-		}
-		std::string	getDarkestSecret() const {
-			return (darkestSecret);
-		}
-
-		void	setFirstName() {
-			firstName = get_line("First name: ");
-		}
-
-		void	setLastName() {
-			lastName = get_line("Last name: ");
-		}
-
-		void	setNickName() {
-			nickName = get_line("Nickname: ");
-		}
-		void	setPhoneNumber() {
-			phoneNumber = get_line("Phone number: ");
-		}
-		void	setDarkestSecret() {
-			darkestSecret = get_line("Darkest secret: ");
-		}
-
-	private:
-		std::string		firstName;
-		std::string		lastName;
-		std::string		nickName;
-		std::string 	phoneNumber;
-		std::string		darkestSecret;
-};
+// FUNCTIONS
+std::string make_max_ten_characters(std::string in);
 
 class Phonebook {
 	public:
