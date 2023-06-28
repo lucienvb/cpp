@@ -1,6 +1,11 @@
 #include <phonebook.hpp>
 
-// is it allowed to use the length() function?
+// This function receives a string and returns the same string
+// with up to 10 characters.
+// When a string is less than 10 characters, the rest of
+// the string is filled with spaces.
+// When a string contains of more than 10 characters the tenth
+// character is replaced by a dot.
 std::string make_max_ten_characters(std::string in)
 {
 	std::string out;

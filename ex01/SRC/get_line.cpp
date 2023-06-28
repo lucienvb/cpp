@@ -1,7 +1,5 @@
 #include <phonebook.hpp>
 
-// CTRL-D
-// maybe check also on only whitespaces
 std::string	get_line(std::string type)
 {
 	std::string line;
@@ -10,7 +8,9 @@ std::string	get_line(std::string type)
 	{
 		std::cout << type;
 		std::getline(std::cin, line);
-		if (!line[0])
+		if (std::cin.eof())
+			break ;
+		if (!line[0] || line[0] == ' ')
 		{
 			std::cout << "A contact cannot have empty field, fill in please" << std::endl;
 			continue ;

@@ -3,13 +3,13 @@
 
 #include <string>
 #include <iostream>
-#include <cstring>
-
-# define LIST_SIZE 8
+#include <csignal>
 
 // FUNCTIONS
 std::string make_max_ten_characters(std::string in);
 std::string	get_line(std::string type);
+
+# define LIST_SIZE 8
 
 class Contact {
 	public:
@@ -63,12 +63,10 @@ class Contact {
 		std::string		darkestSecret;
 };
 
-// FIX CTRL-D !
-// new isn't allowed --> dynamically allocation!
 class Phonebook {
 	public:
+
 		Phonebook () {
-			list = new Contact[LIST_SIZE];
 			i = 0;
 		}
 
@@ -87,7 +85,7 @@ class Phonebook {
 			list[i++] = newContact;
 		}
 
-		void	printContact() {
+		bool	printContact() {
 			std::string line;
 			uint32_t	index;
 
@@ -102,8 +100,18 @@ class Phonebook {
 			{
 				std::cout << "\n\nIndex of choice: ";
 				std::getline(std::cin, line);
+				if (std::cin.eof())
+				{
+					std::cout << "\n";
+					return (false);
+				}
+				if (line.length() > 2 || !std::isdigit(line[0]))
+				{
+					std::cout << "Invalid input. ";
+					continue ;
+				}
 				index = std::stoi(line);
-				if (index < 0 || index > 7)
+				if (index > 7)
 					std::cout << "Invalid index. ";
 				else
 					break ;
@@ -114,10 +122,11 @@ class Phonebook {
 			std::cout << "Nickname: " << list[index].getNickName() << std::endl;
 			std::cout << "Phone number: " << list[index].getPhoneNumber() << std::endl;
 			std::cout << "Darkest secret: " << list[index].getDarkestSecret() << std::endl << std::endl;
+			return (true);
 		}
 
 	private:
-		Contact	*list;
+		Contact	list[LIST_SIZE];
 		int32_t	i;
 };
 
