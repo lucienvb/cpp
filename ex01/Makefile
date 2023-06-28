@@ -42,10 +42,10 @@ endif
 # Source files
 SRC = \
   SRC/main.cpp \
-  SRC/make_max_ten_characters.cpp \
-  SRC/get_line.cpp \
-  SRC/phonebook.cpp \
-  SRC/contact.cpp
+  SRC/utils/make_max_ten_characters.cpp \
+  SRC/utils/get_line.cpp \
+  SRC/class_related/phonebook.cpp \
+  SRC/class_related/contact.cpp
 
 TEST_SRC =
 

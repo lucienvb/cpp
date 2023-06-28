@@ -4,12 +4,17 @@ void handleSIGTSTP(int signal) {
 	(void)signal;
 }
 
+void handleSIGQUIT(int signal) {
+	(void)signal;
+}
+
 int	main(void)
 {
     std::string line;
 	Phonebook	pb;
 
 	std::signal(SIGTSTP, handleSIGTSTP);
+	std::signal(SIGQUIT, handleSIGQUIT);
 	while (1)
 	{
 		std::cout << "Choose one of the following commands: ADD / SEARCH / EXIT" << std::endl;
