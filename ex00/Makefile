@@ -38,7 +38,7 @@ endif
 
 # Source files
 SRC = \
-	SRC/main.cpp
+	SRC/megaphone.cpp
 
 TEST_SRC =
 
