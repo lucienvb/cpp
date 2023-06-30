@@ -17,7 +17,7 @@ int	main(void)
 	std::signal(SIGQUIT, handleSIGQUIT);
 	while (1)
 	{
-		std::cout << "Choose one of the following commands: ADD / SEARCH / EXIT" << std::endl;
+		std::cout << "Choose a command (ADD / SEARCH / EXIT): ";
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			break ;

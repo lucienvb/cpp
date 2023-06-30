@@ -8,12 +8,13 @@ void    Phonebook::addContact() {
     Contact newContact;
     std::string line;
 
+	std::cout << "\n";
     newContact.setFirstName();
     newContact.setLastName();
     newContact.setNickName();
     newContact.setPhoneNumber();
     newContact.setDarkestSecret();
-
+	std::cout << "\n";
     if (i == LIST_SIZE)
         i = 0;
     list[i++] = newContact;
