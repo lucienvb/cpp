@@ -42,7 +42,7 @@ endif
 # Source files
 SRC = \
   SRC/main.cpp \
-  SRC/utils/make_max_ten_characters.cpp \
+  SRC/utils/handle_greater_than_ten.cpp \
   SRC/utils/get_line.cpp \
   SRC/class_related/phonebook.cpp \
   SRC/class_related/contact.cpp

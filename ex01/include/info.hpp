@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include <csignal>
+#include <iomanip>
 
 // CLASSES
 #include <contact.hpp>
@@ -12,6 +13,6 @@
 
 // PROTOTYPES
 std::string	get_line(std::string type);
-std::string make_max_ten_characters(std::string in);
+std::string handle_greater_than_ten(std::string str);
 
 #endif

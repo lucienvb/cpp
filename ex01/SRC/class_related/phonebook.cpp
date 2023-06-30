@@ -26,10 +26,11 @@ bool	Phonebook::printContact() {
 
 	for (uint32_t j = 0; j < LIST_SIZE; j++)
 	{
-		std::cout << "\n" << make_max_ten_characters(std::to_string(j)) << "|"
-				  << make_max_ten_characters(list[j].getFirstName()) << "|" <<
-				  make_max_ten_characters(list[j].getLastName()) << "|" <<
-				  make_max_ten_characters(list[j].getNickName());
+		std::cout << "\n" << std::setw(10) << std::left << std::setfill(' ')
+		<< handle_greater_than_ten(std::to_string(j)) << "|" << std::setw(10) << std::left
+		<< std::setfill(' ') << handle_greater_than_ten(list[j].getFirstName()) << "|" << std::setw(10)
+		<< std::left << std::setfill(' ') << handle_greater_than_ten(list[j].getLastName()) << "|"
+		<< std::setw(10) << std::left << std::setfill(' ') << handle_greater_than_ten(list[j].getNickName()) << "|";
 	}
 	while (1)
 	{
