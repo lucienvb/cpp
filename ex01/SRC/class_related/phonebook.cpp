@@ -30,7 +30,7 @@ bool	Phonebook::printContact() {
 		<< handle_greater_than_ten(std::to_string(j)) << "|" << std::setw(10) << std::left
 		<< std::setfill(' ') << handle_greater_than_ten(list[j].getFirstName()) << "|" << std::setw(10)
 		<< std::left << std::setfill(' ') << handle_greater_than_ten(list[j].getLastName()) << "|"
-		<< std::setw(10) << std::left << std::setfill(' ') << handle_greater_than_ten(list[j].getNickName()) << "|";
+		<< std::setw(10) << std::left << std::setfill(' ') << handle_greater_than_ten(list[j].getNickName());
 	}
 	while (1)
 	{

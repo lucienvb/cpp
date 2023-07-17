@@ -8,7 +8,8 @@ Contact::Contact() {
     darkestSecret = "";
 }
 
-Contact::~Contact() {}
+Contact::~Contact() {
+}
 
 std::string	Contact::getFirstName() const {
 	return (firstName);
