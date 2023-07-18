@@ -1,11 +1,6 @@
 #include <info.hpp>
 
 Contact::Contact() {
-    firstName = "";
-    lastName = "";
-    nickName = "";
-    phoneNumber = "";
-    darkestSecret = "";
 }
 
 Contact::~Contact() {

@@ -21,14 +21,14 @@ int	main(void)
 		std::getline(std::cin, line);
 		if (std::cin.eof())
 			break ;
-		if (line.compare("ADD") == 0)
+		if (line == "ADD")
 			pb.addContact();
-		else if (line.compare("SEARCH") == 0)
+		else if (line == "SEARCH")
 		{
 			if (pb.printContact() == false)
 				return (0);
 		}
-		else if (line.compare("EXIT") == 0)
+		else if (line == "EXIT")
 			break ;
 		else
 			std::cout << "Invalid command. ";
